@@ -1,0 +1,18 @@
+# dosya_isleme.py
+
+def kelimeyi_bul(dosya_yolu, hedef_kelime):
+    try:
+        # Dosyayı açın
+        with open(dosya_yolu, 'r') as dosya:
+            # Dosyadaki her satırı kontrol edin
+            for satir in dosya:
+                # Hedef kelimeyi içeren satırları ekrana yazdırın
+                if hedef_kelime in satir:
+                    print(satir.strip())  # strip() fonksiyonu ile fazladan boşlukları temizle
+    except FileNotFoundError:
+        print(f"{dosya_yolu} bulunamadı.")
+    except Exception as e:
+        print(f"Bir hata oluştu: {e}")
+
+if __name__ == "__main__":
+    dosya_yolu = "ornek_metin.tx
